@@ -219,7 +219,7 @@ export default {
       align-content:left;
   }
   img {
-  width: 500;
+  width: 500px;
   padding: 10px;
 }
   
