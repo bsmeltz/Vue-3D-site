@@ -9,11 +9,25 @@
   </head>
 
   <body>
+    <div class="home">
+      <section class="image-gallery">
+        <div class="image" v-for="item in items" :key="item.id">
+          <h2>{{item.title}}</h2>
+          <img :src="item.path" />
+          <p>{{item.weight}} | 
+          {{item.time}}</p>
+        </div>
+      </section>
+    </div>
 
+
+
+
+<!--
     <h1>Projects</h1>
     
     <div class="container">
-      <!-- <div v-for= "i in 3" :key="i">{{data[i-1]}}</div> -->
+      
       <div class ="row" v-for= "index in data.length/3" :key="index">
         <div v-for="j in 3" :key="j">
           <div class="col-md-4 mb-3 text-center">
@@ -25,21 +39,37 @@
         </div>
       </div>
       </div>
+-->
     </body>
-    <footer><a href="https://github.com/bsmeltz/Vue-3D-site">Repository</a></footer>
+    
   </html>
 </template>
 
 
 <script>
-
+// @ is an alias to /src
+import axios from 'axios';
 export default {
   name: 'AboutView',
-  computed: {
-    data() {
-      return this.$root.$data.prints;
+  data() {
+    return {
+     items: [],
     }
   },
+  created() {
+    this.getItems();
+  },
+  methods: {
+    async getItems() {
+      try {
+        let response = await axios.get("/api/items");
+        this.items = response.data;
+        return true;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  }
 }
 </script>
 
@@ -71,11 +101,50 @@ export default {
     
   }
   
- 
-img{
-  width:300
+/* Masonry */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
+.image-gallery {
+  column-gap: 1.5em;
+}
+
+.image {
+  margin: 0 0 1.5em;
+  display: inline-block;
+  width: 300;
+  padding: 10px;
+}
+
+.image img {
+  
+  width: 100%;
+}
+
+/* Masonry on large screens */
+@media only screen and (min-width: 1024px) {
+  .image-gallery {
+    column-count: 4;
+  }
+}
+
+/* Masonry on medium-sized screens */
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .image-gallery {
+    column-count: 3;
+  }
+}
+
+/* Masonry on small screens */
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  .image-gallery {
+    column-count: 2;
+  }
+}
+ 
 .rotr{
   transform: rotateZ(90deg)
 }

@@ -37,6 +37,6 @@
 
     </div>
 </body>
-<footer><a href="https://github.com/bsmeltz/Vue-3D-site">Repository</a></footer>
+<!--<footer><a href="https://github.com/bsmeltz/Vue-3D-site">Repository</a></footer>-->
 </html>
 </template>

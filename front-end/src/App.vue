@@ -18,7 +18,10 @@
                 <router-link to="/machine"> Machinery </router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/supplies"> Supplies</router-link>
+                <router-link to="/supplies"> Supplies </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link to="/admin"> Admin</router-link>
               </li>
               <!--<li class="nav-item">
                 <a class="nav-link" href="resource.html">Resources</a>
@@ -29,6 +32,7 @@
   
     </nav>
     <router-view/>
+    <footer><a href="https://github.com/bsmeltz/Vue-3D-site">Repository</a></footer>
   </div>
 </template>
 
@@ -47,14 +51,17 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: lightslategray;
 }
 
 nav a.router-link-exact-active {
   color: #42b983;
 }
 .nav-link{
-  color: blue;
+  color: white;
+}
+.nav-item{
+  padding: 5px;
 }
  
 </style>
