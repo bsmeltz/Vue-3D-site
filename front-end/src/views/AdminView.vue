@@ -22,12 +22,12 @@
                     <input type="file" name="photo" @change="fileChanged">
                     <button @click="upload">Upload</button>
                 </div>
-                <div class="upload" v-if="addItem">
+                <!--<div class="upload" v-if="addItem">
                     <h2>{{addItem.title}}</h2>
                     <textarea v-model="weight"></textarea>
                     <textarea v-model="time"></textarea>
                     <img :src="addItem.path" />
-                </div>
+                </div>-->
                 </div>
                 <div class="heading">
                 

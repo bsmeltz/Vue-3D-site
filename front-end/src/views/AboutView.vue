@@ -12,7 +12,7 @@
     <div class="home">
       <section class="image-gallery">
         <div class="image" v-for="item in items" :key="item.id">
-          <h2>{{item.title}}</h2>
+          <h3>{{item.title}}</h3>
           <img :src="item.path" />
           <p>{{item.weight}} | 
           {{item.time}}</p>
@@ -180,5 +180,11 @@ export default {
   }
   h2{
       text-align: center;
+  }
+  h3{
+    text-align: center;
+  }
+  p{
+    text-align: center;
   }
 </style>
