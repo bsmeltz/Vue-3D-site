@@ -71,6 +71,9 @@
     padding: 5px;
     
   }
+  img {
+    width: 500;
+  }
  
 .rotr{
   transform: rotateZ(90deg)
